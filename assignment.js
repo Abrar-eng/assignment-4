@@ -43,14 +43,11 @@ function oilPrice(DieselQuantity, PetrolQuantity, OctaneQuantity){
     
     const totalCost = Diesel + Petrol + Octane;
     return totalCost;
-    
-}
-else{
-      return 'Check Input-requrement';
-}
+
+}else return 'Check Input-requrement';
 }
 const totalCost = oilPrice(1,1,1);
-// console.log("Total cost: ", totalCost);
+console.log("Total cost: ", totalCost);
 
 
 
