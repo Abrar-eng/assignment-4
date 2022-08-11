@@ -2,18 +2,13 @@
 // ফাংশন নেম দিতে হবে radianToDegree । এই ফাংশনে প্যারামিটার হিসেবে নিবে রেডিয়ান (radian)। তারপর সেটাকে ডিগ্রীতে (degree) কনভার্ট করে কত ডিগ্রী (degree) হয় সেই সংখ্যা রিটার্ন করবে। রিটার্ন করার সময় তোমাকে দশমিক এর পর দুই ঘর রিটার্ন করতে হবে।
 
 function radianToDegree(radian){
-    const pi = Math.PI;
-    if(typeof radian == 'number'){
-        return radian * (180 / pi);
-    }else{
-        return "error";
-    }
-    
+    if(typeof radian === 'number' && radian >=0){
+        const degree = radian * (180 /Math.PI);
+        return degree.toFixed(2);
+    }else return "Error!! Please Input number";
 }
 
-let result = (radianToDegree(2));
-let mainResult = result.toFixed(2);
-console.log(mainResult);
+// console.log(radianToDegree(1));
 
 
 
@@ -62,12 +57,13 @@ const totalCost = oilPrice(1,1,1);
 // 4.publicBusFare
 // একটি বড় সংখ্যাক মানুষজন পিকনিকে যাবে। বাসের সংখ্যা মানুষের সংখার উপর নির্ভর করবে। ধরো আমাদের বাস ও মাইক্রো আছে । প্রতিটি বাসের ক্যাপাসিটি ৫০ জন এবং প্রতিটি মাইক্রবাসের ক্যাপাসিটি ১১ জন এবং পাবলিক বাসের প্রতিটি টিকেটের মূল্য ২৫০ টাকা করে। এখন তোমাকে একটি ফাংশন লিখতে হবে যার নাম হবে publicBusFare যেটি প্যরামিটার হিসেবে একটা সংখ্যা (কতজন যাবে)  নিবে । মোট কতটাকা পাবলিক বাস ফেয়ারে যাবে সেটি তোমাকে রিটার্ন করবে । 
 
-function publicBusFare(){
-    let publicBusRider = ((peopleCount % 50) % 11) * 250;
-    return publicBusRider;
+function publicBusFare(peopleCount){
+    if(typeof peopleCount === 'number' ){
+        let publicBusRider = ((peopleCount % 50) % 11) * 250;
+        return publicBusRider;
+    }else return "Error!! Please Input number"   
 }
-const peopleCount = 55;
-// console.log(publicBusFare(peopleCount));
+console.log(publicBusFare(55));
 
 // 5.isBestFriend
 // তোমাকে একটি ফাংশন লিখতে হবে isBestFriend যেটি প্যরামিটার হিসেবে দুইটি অবজেক্ট নিবে । তোমাকে অবজেক্ট দুইটি নিয়ে দেখতে হবে এরা দুইজন একে অপরের বেস্টফ্রেন্ড কিনা । যদি বেস্ট ফ্রেন্ড হয় তাহলে true রিটার্ন করবে , না হলে false রিটার্ন করবে ।
